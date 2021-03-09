@@ -41,4 +41,22 @@ insert into address_book(first_name, last_name,city,state,zip,phone_number,email
 select * from Address_Book.address_book;
 select * from address_book where city = 'Gurgaon' order by first_name ;
 
+-- UC9
+desc address_book;
+Alter table address_book add type varchar(50) after first_name;
+select * from address_book;
 
+-- UC10
+insert into address_book(first_name, type, last_name,city,state,zip,phone_number,email) 
+				values ('Veena','family','Malhotra','Gurgaon','Haryana','122001','1234567','veena@gmail.com');
+insert into address_book(first_name, type, last_name,city,state,zip,phone_number,email) 
+				values ('Radhey','friend','Yadav','Gurgaon','Haryana','122001','234567654','radhey@gmail.com');
+select * from address_book;
+select count(type) from address_book;
+
+-- UC11
+insert into address_book(first_name, type, last_name,city,state,zip,phone_number,email) 
+				values ('Praveen','friend','Yadav','Gurgaon','Haryana','122001','234567654','radhey@gmail.com');
+insert into address_book(first_name, type, last_name,city,state,zip,phone_number,email) 
+				values ('Praveen','family','Yadav','Gurgaon','Haryana','122001','234567654','radhey@gmail.com');
+select * from address_book;

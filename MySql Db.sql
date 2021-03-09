@@ -35,6 +35,28 @@ select count(name) from employee_payroll;
 select sum(salary) from employee_payroll where gender = "female";
 select sum(salary) from employee_payroll where gender = "male";
 
+-- UC8
+desc employee_payroll;
+Alter table employee_payroll add phone_number varchar(12), add address varchar(50), add department varchar(50);
 
+-- UC9
+Alter table employee_payroll add basic_pay varchar(20), 
+							add deductions varchar(20), 
+                            add taxable_pay varchar(20), 
+                            add income_tax varchar(20), 
+                            add net_pay varchar(20);
+desc employee_payroll;
 
+-- UC10
+select * from employee_payroll;
+insert into employee_payroll(name,gender,salary,start_date,phone_number,address,department,basic_pay,deductions,taxable_pay,income_tax,net_pay) 
+values('Terissa','female','800000',curdate(),'800000','Banglore','Sales,','500000','150000','300000','30000','620000');
+
+insert into employee_payroll(name,gender,salary,start_date,phone_number,address,department,basic_pay,deductions,taxable_pay,income_tax,net_pay) 
+values('Terissa','female','800000',curdate(),'1000000','Banglore','Marketing,','700000','200000','500000','50000','850000');
+
+select * from employee_payroll where name = 'Terissa';
+
+-- UC10
+-- Created ER Diagram.
 
